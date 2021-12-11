@@ -1,3 +1,10 @@
+@php
+$cart = [];
+if (Session::has('cart')) {
+$cart = Session::get('cart');
+}
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,9 +84,9 @@
                                 </ul>
                                 <ul class="navbar_user">
                                     <li class="checkout">
-                                        <a href="javascript:void(0);">
+                                        <a href="{{ route('cart.index') }}">
                                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                            <span id="checkout_items" class="checkout_items">2</span>
+                                            <span id="checkout_items" class="checkout_items">{{ count($cart) }}</span>
                                         </a>
                                     </li>
                                 </ul>

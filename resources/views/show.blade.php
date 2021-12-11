@@ -63,7 +63,11 @@
 
                     <div class=" quantity  d-flex flex-column flex-sm-row align-items-sm-center ">
                         <div class="red_button add_to_cart_button">
-                            <a href="#">add to cart</a>
+                            @if (in_array($product->id, $cart))
+                            <a href="{{ route('cart.destroy',['cart'=>$product->id]) }}">remove to cart</a>
+                            @else
+                            <a href="{{ route('cart.store',['cart'=>$product->id]) }}">add to cart</a>
+                            @endif
                         </div>
                     </div>
                 </div>
