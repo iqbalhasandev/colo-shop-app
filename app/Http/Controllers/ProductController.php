@@ -12,4 +12,9 @@ class ProductController extends Controller
         $products = Product::all();
         return \view('index')->with('products', $products);
     }
+
+    public function show(Product $product)
+    {
+        return \view('show')->with('product', $product);
+    }
 }
