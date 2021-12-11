@@ -39,6 +39,6 @@ class ImportSql extends Command
     public function handle()
     {
         // return Command::SUCCESS;
-        DB::unprepared(file_get_contents(database_path('data.sql')));
+        DB::unprepared(file_get_contents(database_path('shop.sql')));
     }
 }
